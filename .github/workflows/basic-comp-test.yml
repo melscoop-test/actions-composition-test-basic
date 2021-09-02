@@ -5,8 +5,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: test some actions 
-        uses: melscoop-test/composition-setup-test-private@main
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+     # checkout this repo
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        # checkout the private repo containing the action to run
+      - name: Checkout GitHub Action Repo
+        uses: actions/checkout@v2
+        with: 
+          repository: melscoop-test/composition-setup-test-private
+          ref: v1
+          token: ${{ secrets.GIT_HUB_TOKEN }} # stored in GitHub secrets
+      - name: Run the action
+        uses: ./action.yml
