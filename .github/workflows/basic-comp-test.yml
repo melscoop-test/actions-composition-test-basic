@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: run some shell commands
+      - name: test some actions 
         uses: melscoop-test/composition-setup-test-private@main
         with:
-          ${{secrets.GITHUB_TOKEN}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
