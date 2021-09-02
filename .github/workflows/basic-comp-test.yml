@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: run some shell commands
-        uses: melscoop-test/bash-test-private@main
+        uses: melscoop-test/composition-setup-test-private@main
         with:
           ${{secrets.GITHUB_TOKEN}}
