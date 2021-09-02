@@ -12,4 +12,4 @@ jobs:
           path: .
           token: '${{ secrets.GITHUB_TOKEN }}' # stored in GitHub secrets
        - name: Run the action
-       - uses: ./action.yml
+         uses: ./action.yml
