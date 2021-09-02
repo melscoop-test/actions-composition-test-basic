@@ -16,6 +16,6 @@ jobs:
           persist-credentials: false
           
        - name: Run Private Action
-         uses: ./
+         uses: ./action.yml
          with:
            input1: value1
