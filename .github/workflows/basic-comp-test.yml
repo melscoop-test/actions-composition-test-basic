@@ -14,6 +14,6 @@ jobs:
         with: 
           repository: melscoop-test/composition-setup-test-private
           ref: v1
-          token: ${{ secrets.GIT_HUB_TOKEN }} # stored in GitHub secrets
+          token: ${{ secrets.GITHUB_TOKEN }} # stored in GitHub secrets
       - name: Run the action
         uses: ./action.yml
