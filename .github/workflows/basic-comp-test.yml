@@ -12,7 +12,7 @@ jobs:
           repository: melscoop-test/composition-setup-test-private@main
           token: '${{ secrets.GITHUB_TOKEN }}' # stored in GitHub secrets
           path: ./action.yml
-          persist-credentials: false
+
           
        - name: Run Private Action
          uses: ./action.yml
