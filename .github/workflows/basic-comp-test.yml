@@ -1,0 +1,12 @@
+name: Basic actions composition test
+on: workflow_dispatch
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: run some shell commands
+        uses: melscoop-test/bash-test-private@main
+        with:
+          ${{secrets.GITHUB_TOKEN}}
