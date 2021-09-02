@@ -6,8 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # checkout the private repo containing the action to run
-       - uses: actions/checkout@v2
+       - name: checkout private repo
+         uses: actions/checkout@v2
          with: 
           repository: melscoop-test/composition-setup-test-private
+          ref: v1
           token: '${{ secrets.GITHUB_TOKEN }}' # stored in GitHub secrets
-       - uses: ./action.yml
+          path: ./
+          persist-credentials: false
+          
+       - name: Run Private Action
+         uses: ./
+         with:
+           input1: value1
