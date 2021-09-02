@@ -9,7 +9,5 @@ jobs:
        - uses: actions/checkout@v2
          with: 
           repository: melscoop-test/composition-setup-test-private
-          path: .
           token: '${{ secrets.GITHUB_TOKEN }}' # stored in GitHub secrets
-       - name: Run the action
-         uses: ./action.yml
+       - uses: ./action.yml
